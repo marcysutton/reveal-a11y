@@ -3,13 +3,18 @@
 
 ## Installation
 1. Clone this repository or download a zip file to copy the files to your machine. 
+	
 1. Copy `accessibility` directory to the Reveal.js `plugin` directory.
+	
 1. Include CSS file in the `<head>` of `index.html`:
-	```
+	
+	```html
 	<link rel="stylesheet" href="plugin/accessibility/helper.css">
 	```
+	
 1. Include JavaScript file as dependency in `index.html`:
-	```
+	
+	```javascript
 	<script>
 	// More info https://github.com/hakimel/reveal.js#configuration
 	Reveal.initialize({
@@ -34,7 +39,7 @@ This plugin only supports nesting of sections 2 levels deep. It injects a "Skip 
 
 Default options (modifiable in `plugin/accessibility/helper.js`):
 
-```
+```javascript
 new SkipLinks({
 	enabled: true,
 
@@ -49,5 +54,3 @@ new SkipLinks({
 	controls_selector: '.controls'
 })
 ```
-
-
