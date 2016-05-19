@@ -1,5 +1,5 @@
 # reveal-a11y
-[Reveal.js](https://github.com/hakimel/reveal.js/) plugin for better slide accessibility. Include CSS and JS in your slide's index file to hide offscreen slides and improve accessibility for keyboard and screen reader users.
+[Reveal.js](https://github.com/hakimel/reveal.js/) plugin for better slide accessibility when shared or distributed online. Include CSS and JS in your slide's index file to hide offscreen slides and improve accessibility for keyboard and screen reader users.
 
 ## Installation
 1. Clone this repository or download a zip file to copy the files to your machine. 
