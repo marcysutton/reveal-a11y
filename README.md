@@ -1,5 +1,5 @@
 # reveal-a11y
-[Reveal.js](https://github.com/hakimel/reveal.js/) plugin for better slide accessibility. Include CSS and JS in your slide's index file to hide offscreen slides from the keyboard and screen readers.
+[Reveal.js](https://github.com/hakimel/reveal.js/) plugin for better slide accessibility. Include CSS and JS in your slide's index file to hide offscreen slides and improve accessibility for keyboard and screen reader users.
 
 ## Installation
 1. Clone this repository or download a zip file to copy the files to your machine. 
@@ -26,13 +26,13 @@
 
 ### Hidden offscreen slides
 
-This plugin adds CSS to "really hide" offscreen slides using `display: none;` on an element wrapping each slide. This technique is used to avoid issues with transitions and `display: none`. For this to work, the styles must be loaded in HTML as a `<link>` tag as opposed to injecting dynamically with JavaScript.
+This plugin adds CSS to "really hide" offscreen slides using `display: none;` on an element wrapping each slide. This technique was used to avoid issues with transitions and `display: none`. For this to work, the styles must be loaded in HTML as a `<link>` tag (as opposed to injecting dynamically with JavaScript).
 
 ### Dynamic Skip Links / Table of Contents 
 
-Only supports nesting sections 2 levels deep. This plugin injects a Skip to Navigation link at the beginning of the source order as well as an unordered list of slide links at the end. Various selectors for injected markup can be manipulated as options.
+This plugin only supports nesting of sections 2 levels deep. It injects a "Skip to Navigation" link at the beginning of the source order as well as an unordered list of slide links at the end. The content for those links is sourced from each slide: it grabs either the first child text node or the bare `textContent`. Various selectors for injected markup can be manipulated as options.
 
-Default options (modifiable in plugin/accessibility/helper.js):
+Default options (modifiable in `plugin/accessibility/helper.js`):
 
 ```
 new SkipLinks({
