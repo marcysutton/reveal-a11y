@@ -84,9 +84,6 @@ function SkipLinks(options) {
     // Cached references to DOM elements
     dom = {};
 
-    // Copy options over to our config object
-    if( typeof options === 'object' ) extend( config, options );
-
     // if controls are present, we'll insert table of contents after them
     if( document.querySelector( CONTROLS_SELECTOR )){
       dom.controls = document.querySelector( CONTROLS_SELECTOR );
