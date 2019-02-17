@@ -97,7 +97,9 @@ function SkipLinks(options) {
   function sanitizeText(text) {
     var tempEl = document.createElement('div');
     tempEl.textContent = text;
-    return tempEl.innerHTML;
+    var sanitizedText = tempEl.innerHTML;
+    tempEl = null
+    return sanitizedText;
   }
 
   /**
