@@ -92,6 +92,15 @@ function SkipLinks(options) {
     if ( DO_SKIP_LINKS ) { buildSkipLinks(); }
 
   /**
+   * Sanitize text content inserted into skip links
+   */
+  function sanitizeText(text) {
+    var tempEl = document.createElement('div');
+    tempEl.textContent = text;
+    return tempEl.innerHTML;
+  }
+
+  /**
    * Build skip links.
    */
   function buildSkipLinks() {
@@ -112,7 +121,7 @@ function SkipLinks(options) {
       if (slideText === '') {
         slideText = wrappedSlide.textContent.substring(0, 40);
       }
-      skipLinkHTML += '<li><a href="#/' + SLIDES[i].getAttribute('data-id') + '">' + (i + 1) + '. ' + slideText + '</a></li>';
+      skipLinkHTML += '<li><a href="#/' + SLIDES[i].getAttribute('data-id') + '">' + (i + 1) + '. ' + sanitizeText(slideText) + '</a></li>';
     }
     skipLinkHTML += '</ul>';
 
