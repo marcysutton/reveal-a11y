@@ -47,9 +47,16 @@ function SlideAccessibility() {
     // populate new array of actual slides
     PLUGIN_SLIDES.push(slideArray[index]);
 
-    // provide nested URL fragments
-    var urlFragment = outerIndex !== undefined ? (outerIndex + '/' + index) : index;
-    slideArray[index].setAttribute('data-id', urlFragment);
+    // provide nested URL fragments and section labels
+    function decorateIndices(incrementor, divider) {
+      if (outerIndex !== undefined) {
+        return ((outerIndex + incrementor) + divider + (index + incrementor));
+      }
+      return index + incrementor;
+    }
+    slideArray[index].setAttribute('data-id', decorateIndices(0, '/'));
+    // label each section with its human-readable slide number
+    slideArray[index].setAttribute('aria-label', 'Slide ' + decorateIndices(1, ', child '));
 
     var contents = slideArray[index].innerHTML;
     slideArray[index].innerHTML = '<div class="accessibilityWrapper">' + contents + '</div>';

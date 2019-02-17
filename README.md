@@ -33,6 +33,10 @@
 
 This plugin adds CSS to "really hide" offscreen slides using `display: none;` on an element wrapping each slide. This technique was used to avoid issues with transitions and `display: none`. For this to work, the styles must be loaded in HTML as a `<link>` tag (as opposed to injecting dynamically with JavaScript).
 
+### Dynamically label slide sections
+
+HTML `<section>` elements commonly used for slides will act as landmarks in screen readers. To make them easier to identify, this plugin dynamically adds an `aria-label` property with a value of "Slide 1", as an example. For nested slides, it will add "Slide 1, child 1" with numbers relative to that slide.
+
 ### Dynamic Skip Links / Table of Contents 
 
 This plugin only supports nesting of sections 2 levels deep. It injects a "Skip to Navigation" link at the beginning of the source order as well as an unordered list of slide links at the end. The content for those links is sourced from each slide: it grabs either the first child text node or the bare `textContent`. Various selectors for injected markup can be manipulated as options.
