@@ -15,7 +15,8 @@
   visibility: hidden;
 }
 
-.reveal .slides section.present > .accessibilityWrapper {
+.reveal .slides section.present > .accessibilityWrapper,
+.reveal.overview .slides section > .accessibilityWrapper {
   display: block;
   visibility: visible;
   outline: none;
